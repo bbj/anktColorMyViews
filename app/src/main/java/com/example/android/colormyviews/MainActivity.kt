@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 //            listOf(box_one_text, box_two_text, box_three_text, box_four_text, box_five_text,
 //            constraint_layout);
             listOf(binding.boxOneText, binding.boxTwoText, binding.boxThreeText,
-                binding.boxFourText, binding.boxFiveText, binding.constraintLayout);
+                binding.boxFourText, binding.boxFiveText, binding.constraintLayout,
+                binding.redButton, binding.yellowButton, binding.greenButton);
 
         for (item in clickableViews) {
             item.setOnClickListener { makeColored(it) }
@@ -47,6 +48,11 @@ class MainActivity : AppCompatActivity() {
             binding.boxThreeText.id -> view.setBackgroundResource(android.R.color.holo_green_light)
             binding.boxFourText.id -> view.setBackgroundResource(android.R.color.holo_green_dark)
             binding.boxFiveText.id -> view.setBackgroundResource(android.R.color.holo_green_light)
+
+            // Boxes using custom colors for background
+            binding.redButton.id -> binding.boxThreeText.setBackgroundResource(R.color.my_red)
+            binding.yellowButton.id -> binding.boxFourText.setBackgroundResource(R.color.my_yellow)
+            binding.greenButton.id -> binding.boxFiveText.setBackgroundResource(R.color.my_green)
 
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
